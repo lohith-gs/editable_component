@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+p{
+  padding:10px;
+  font-weight: 600;
+}
+
+.editable-component-wrapper{
+  width: 16.5%;
+  padding: 10px;
+  
+}
+
+.date-picker-wrapper{
+  width: 15%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  margin: 10px;
+}

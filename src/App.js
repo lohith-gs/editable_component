@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import EditableComponent from './EditableComponent/EditableComponent';
+import DatePickerComponent from './DatePickerComponent/DatePickerComponent';
+import { ChakraProvider, UnorderedList } from '@chakra-ui/react'
+import { useState } from 'react';
+
 
 function App() {
+
+  
+  const [selectedDate,setSelectedDate]=useState(new Date())
+  
+  
+  const handleDateChange=(date)=>{
+    setSelectedDate(date);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+        <p>Editable Input Component</p>
+        <div className='editable-component-wrapper'>
+          <EditableComponent/>
+        </div>
+        <p>Date Picker</p>
+        <div className='date-picker-wrapper'>
+          <DatePickerComponent selectedDate={selectedDate} handleDateChange={handleDateChange}/>
+        </div>
+    </ChakraProvider>
   );
 }
 
